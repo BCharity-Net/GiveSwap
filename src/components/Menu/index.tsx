@@ -104,7 +104,7 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://moongive.gitbook.io/moongive/">
+          <MenuItem id="link" href="https://metisgive.gitbook.io/metisgive/">
             <Info size={14} />
             About
           </MenuItem>
