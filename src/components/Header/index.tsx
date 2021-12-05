@@ -373,13 +373,13 @@ export default function Header() {
             Vote
           </StyledNavLink> */}
           <StyledExternalLink id={`stake-nav-link`} href={miningLink}>
-            {t('mining')} <span style={{ fontSize: '11px' }}>↗</span>
+            {t('Solos')} <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
           <StyledExternalLink id={`stake-nav-link`} href={infoLink}>
-            {t('info')} <span style={{ fontSize: '11px' }}>↗</span>
+            {t('Info')} <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
-          <StyledExternalLink id={`stake-nav-link`} href={"https://metisgive.netlify.app/farms"}>
-            {t('farm')} <span style={{ fontSize: '11px' }}>↗</span>
+          <StyledExternalLink id={`stake-nav-link`} href={"https://givefi.bcharity.net/farms"}>
+            {t('Farms')} <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
           {networkType === 'BSC' && (
             <StyledExternalLink id={`stake-nav-link`} href={'https://movr.anyswap.exchange/#/bridge'}>
