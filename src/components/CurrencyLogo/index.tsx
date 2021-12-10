@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import HecoLogo from '../../assets/images/Heco-logo.png'
 import BinanceLogo from '../../assets/images/bnb.svg'
+import MetisLogo from '../../assets/images/Metis-logo.png'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
@@ -61,7 +62,12 @@ export default function CurrencyLogo({
   if (currency === ETHER) {
     return (
       <StyledEthereumLogo
-        src={chainId === 56 || chainId === 97 ? BinanceLogo : chainId === 256 || chainId === 128 ? HecoLogo : EthereumLogo}
+        src={
+          chainId === 56 || chainId === 97 ? BinanceLogo 
+          : chainId === 256 || chainId === 128 ? HecoLogo 
+          : chainId === 588 || chainId === 1088 ? MetisLogo 
+          : EthereumLogo
+        }
         size={size}
         style={style}
       />

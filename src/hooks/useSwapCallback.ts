@@ -1,17 +1,16 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { JSBI, Percent, Router, SwapParameters, Trade
-  // , TradeType
- } from 'giveswap-sdk'
+import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'giveswap-sdk'
 import { useMemo } from 'react'
 import { BIPS_BASE, INITIAL_ALLOWED_SLIPPAGE } from '../constants'
-import { getTradeVersion, useV1TradeExchangeAddress } from '../data/V1'
+// import { getTradeVersion, useV1TradeExchangeAddress } from '../data/V1'
+import { getTradeVersion } from '../data/V1'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { calculateGasMargin, getRouterContract, isAddress, shortenAddress } from '../utils'
 import isZero from '../utils/isZero'
 // import v1SwapArguments from '../utils/v1SwapArguments'
 import { useActiveWeb3React } from './index'
-import { useV1ExchangeContract } from './useContract'
+// import { useV1ExchangeContract } from './useContract'
 import useTransactionDeadline from './useTransactionDeadline'
 import useENS from './useENS'
 import { Version } from './useToggledVersion'
@@ -57,7 +56,7 @@ function useSwapCallArguments(
   const recipient = recipientAddressOrName === null ? account : recipientAddress
   const deadline = useTransactionDeadline()
 
-  const v1Exchange = useV1ExchangeContract(useV1TradeExchangeAddress(trade), true)
+  // const v1Exchange = useV1ExchangeContract(useV1TradeExchangeAddress(trade), true)
 
   return useMemo(() => {
     const tradeVersion = getTradeVersion(trade)
@@ -70,8 +69,8 @@ function useSwapCallArguments(
 
     const swapMethods = []
 
-    // switch (tradeVersion) {
-    //   case Version.v2:
+    switch (tradeVersion) {
+      case Version.v2:
         swapMethods.push(
           Router.swapCallParameters(trade, {
             feeOnTransfer: false,
@@ -81,17 +80,17 @@ function useSwapCallArguments(
           })
         )
 
-        // if (trade.tradeType === TradeType.EXACT_INPUT) {
-        //   swapMethods.push(
-        //     Router.swapCallParameters(trade, {
-        //       feeOnTransfer: true,
-        //       allowedSlippage: new Percent(JSBI.BigInt(allowedSlippage), BIPS_BASE),
-        //       recipient,
-        //       deadline: deadline.toNumber()
-        //     })
-        //   )
-        // }
-      //   break
+        if (trade.tradeType === TradeType.EXACT_INPUT) {
+          swapMethods.push(
+            Router.swapCallParameters(trade, {
+              feeOnTransfer: true,
+              allowedSlippage: new Percent(JSBI.BigInt(allowedSlippage), BIPS_BASE),
+              recipient,
+              deadline: deadline.toNumber()
+            })
+          )
+        }
+        break
       // case Version.v1:
       //   swapMethods.push(
       //     v1SwapArguments(trade, {
@@ -101,9 +100,9 @@ function useSwapCallArguments(
       //     })
       //   )
       //   break
-    // }
+    }
     return swapMethods.map(parameters => ({ parameters, contract }))
-  }, [account, allowedSlippage, chainId, deadline, library, recipient, trade, v1Exchange])
+  }, [account, allowedSlippage, chainId, deadline, library, recipient, trade]) //, v1Exchange])
 }
 
 // returns a function that will execute a swap, if the parameters are all valid

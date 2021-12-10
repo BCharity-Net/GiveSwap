@@ -90,16 +90,16 @@ export const UNI: { [chainId in ChainId]: Token } = {
   ),
   [ChainId.METISTEST]: new Token(
     ChainId.METISTEST,
-    '0x5C6a0B211a3dd809050A26F224F0e2AAba3d22f5',
+    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
     18,
-    'GIVE',
+    'METIS',
     'Unisave'
   ),
   [ChainId.METIS]: new Token(
     ChainId.METIS,
-    '0xFe3F3A1f5B91eeb9c85255A71F3D1A99F01eC3eC',
+    '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000',
     18,
-    'GIVE',
+    'METIS',
     'Unisave'
   ),
 }
@@ -234,14 +234,14 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
   [ChainId.METISTEST]: [
     [
       new Token(ChainId.METISTEST, '0x5C6a0B211a3dd809050A26F224F0e2AAba3d22f5', 18, 'GIVE', 'GiveSwap Token'),
-      new Token(ChainId.METISTEST, '0xd52a793Ebb4A895B9Ba7f77D8a3FeEEc565b324e', 18, 'WMETIS', 'Wrappered METIS')
+      new Token(ChainId.METISTEST, '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000', 18, 'METIS', 'METIS')
       // new Token(ChainId.HECOTEST, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
     ]
   ],
   [ChainId.METIS]: [
     [
       new Token(ChainId.METIS, '0xFe3F3A1f5B91eeb9c85255A71F3D1A99F01eC3eC', 18, 'GIVE', 'GiveSwap Token'),
-      new Token(ChainId.METIS, '0x75cb093E4D61d2A2e65D8e0BBb01DE8d89b53481', 18, 'WMETIS', 'Wrappered METIS')
+      new Token(ChainId.METIS, '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000', 18, 'METIS', 'METIS')
       // new Token(ChainId.HECOTEST, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
     ]
   ],   

@@ -34,7 +34,7 @@ export default function useWrapCallback(
   return useMemo(() => {
     if (!wethContract || !chainId || !inputCurrency || !outputCurrency) return NOT_APPLICABLE
 
-    const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
+    const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)    
 
     if (inputCurrency === ETHER && currencyEquals(WETH[chainId], outputCurrency)) {
       return {
