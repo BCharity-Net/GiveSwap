@@ -1,8 +1,9 @@
 {
   "name": "giveswap-frontend",
+  "version": "0.0.2",
   "description": "Giveswap Frontend",
-  "homepage": ".",
-  "private": true,
+  "homepage": "https://github.com/BCharity-Net/GiveSwap.git",
+  "private": false,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
     "@popperjs/core": "^2.4.4",
