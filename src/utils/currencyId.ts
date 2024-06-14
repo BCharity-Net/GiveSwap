@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from 'giveswap-sdk'
+import { Currency, ETHER, Token } from 'goodswap-sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'CURRENCY'

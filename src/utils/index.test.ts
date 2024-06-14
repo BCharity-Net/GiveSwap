@@ -1,14 +1,13 @@
-import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
-import { TokenAmount, Token, ChainId, Percent, JSBI } from 'giveswap-sdk'
+import { ChainId, JSBI, Percent, Token, TokenAmount } from 'goodswap-sdk'
 
 import {
-  getBscScanLink,
-  calculateSlippageAmount,
-  isAddress,
-  shortenAddress,
-  calculateGasMargin,
-  basisPointsToPercent
+    basisPointsToPercent,
+    calculateGasMargin,
+    calculateSlippageAmount,
+    getBscScanLink,
+    isAddress,
+    shortenAddress
 } from '.'
 
 describe('utils', () => {

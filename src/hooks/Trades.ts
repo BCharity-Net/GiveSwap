@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Token, Trade } from 'giveswap-sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from 'goodswap-sdk'
 import flatMap from 'lodash.flatmap'
 import { useMemo } from 'react'
 

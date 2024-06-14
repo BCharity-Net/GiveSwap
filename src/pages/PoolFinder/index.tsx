@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Currency, ETHER, JSBI, TokenAmount } from 'giveswap-sdk'
-import React, { useCallback, useEffect, useState } from 'react'
+import { Currency, ETHER, JSBI, TokenAmount } from 'goodswap-sdk'
+import { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
-import { Text } from 'rebass'
 import { useTranslation } from 'react-i18next'
+import { Text } from 'rebass'
 import { ButtonDropdownLight } from '../../components/Button'
 import { LightCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Column'

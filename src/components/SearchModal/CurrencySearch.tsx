@@ -1,18 +1,19 @@
-import { Currency, ETHER, Token } from 'giveswap-sdk'
-import React, {
-  KeyboardEvent,
-  RefObject,
-  useCallback,
-  /* useContext, */ useEffect,
-  useMemo,
-  useRef,
-  useState
+import { Currency, ETHER, Token } from 'goodswap-sdk'
+import {
+    KeyboardEvent,
+    RefObject,
+    useCallback,
+    /* useContext, */ useEffect,
+    useMemo,
+    useRef,
+    useState
 } from 'react'
 import ReactGA from 'react-ga'
 import { useTranslation } from 'react-i18next'
 import { FixedSizeList } from 'react-window'
 import { Text } from 'rebass'
 // import { ThemeContext } from 'styled-components'
+import AutoSizer from 'react-virtualized-auto-sizer'
 import { useActiveWeb3React } from '../../hooks'
 import { useAllTokens, useToken } from '../../hooks/Tokens'
 import { useSelectedListInfo } from '../../state/lists/hooks'
@@ -25,11 +26,10 @@ import QuestionHelper from '../QuestionHelper'
 import Row, { RowBetween } from '../Row'
 import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
-import { filterTokens } from './filtering'
 import SortButton from './SortButton'
+import { filterTokens } from './filtering'
 import { useTokenComparator } from './sorting'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
-import AutoSizer from 'react-virtualized-auto-sizer'
 
 interface CurrencySearchProps {
   isOpen: boolean

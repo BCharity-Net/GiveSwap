@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react'
-import { Text } from 'rebass'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from 'giveswap-sdk'
-import styled from 'styled-components'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from 'goodswap-sdk'
 import { useTranslation } from 'react-i18next'
+import { Text } from 'rebass'
+import styled from 'styled-components'
 import { SUGGESTED_BASES } from '../../constants'
 import { AutoColumn } from '../Column'
+import CurrencyLogo from '../CurrencyLogo'
 import QuestionHelper from '../QuestionHelper'
 import { AutoRow } from '../Row'
-import CurrencyLogo from '../CurrencyLogo'
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
   border: 1px solid ${({ theme, disable }) => (disable ? 'transparent' : theme.bg3)};

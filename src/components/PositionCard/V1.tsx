@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
-import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
-import { Token, TokenAmount, WETH } from 'giveswap-sdk'
+import { Token, TokenAmount, WETH } from 'goodswap-sdk'
+import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
 import { Text } from 'rebass'
-import { AutoColumn } from '../Column'
+import { ThemeContext } from 'styled-components'
+import { useActiveWeb3React } from '../../hooks'
 import { ButtonSecondary } from '../Button'
+import { AutoColumn } from '../Column'
+import DoubleCurrencyLogo from '../DoubleLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { FixedHeightRow, HoverCard } from './index'
-import DoubleCurrencyLogo from '../DoubleLogo'
-import { useActiveWeb3React } from '../../hooks'
-import { ThemeContext } from 'styled-components'
 
 interface PositionCardProps extends RouteComponentProps<{}> {
   token: Token

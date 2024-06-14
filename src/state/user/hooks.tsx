@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from 'giveswap-sdk'
+import { ChainId, Pair, Token } from 'goodswap-sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
@@ -8,17 +8,17 @@ import { useActiveWeb3React } from '../../hooks'
 import { useAllTokens } from '../../hooks/Tokens'
 import { AppDispatch, AppState } from '../index'
 import {
-  addSerializedPair,
-  addSerializedToken,
-  removeSerializedToken,
-  SerializedPair,
-  SerializedToken,
-  updateUserDarkMode,
-  updateUserDeadline,
-  updateUserExpertMode,
-  updateUserSlippageTolerance,
-  toggleURLWarning,
-  toggleDirectSwap
+    SerializedPair,
+    SerializedToken,
+    addSerializedPair,
+    addSerializedToken,
+    removeSerializedToken,
+    toggleDirectSwap,
+    toggleURLWarning,
+    updateUserDarkMode,
+    updateUserDeadline,
+    updateUserExpertMode,
+    updateUserSlippageTolerance
 } from './actions'
 
 function serializeToken(token: Token): SerializedToken {

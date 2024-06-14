@@ -1,7 +1,7 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, TokenAmount } from 'giveswap-sdk'
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, TokenAmount } from 'goodswap-sdk'
 import { useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
 import { usePair } from '../../data/Reserves'
 import { useTotalSupply } from '../../data/TotalSupply'
 

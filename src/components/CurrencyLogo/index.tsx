@@ -1,21 +1,21 @@
-import { Currency, ETHER, Token } from 'giveswap-sdk'
+import { Currency, ETHER, Token } from 'goodswap-sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import HecoLogo from '../../assets/images/Heco-logo.png'
-import BinanceLogo from '../../assets/images/bnb.svg'
 import MetisLogo from '../../assets/images/Metis-logo.png'
+import BinanceLogo from '../../assets/images/bnb.svg'
+import EthereumLogo from '../../assets/images/ethereum-logo.png'
+import { useActiveWeb3React } from '../../hooks'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
-import { useActiveWeb3React } from '../../hooks'
 
 const getTokenLogoURL = (chainId: number | undefined, address: string) => {
   if (chainId === 1285) return `https://raw.githubusercontent.com/BCharity-Net/giveswap-tokenlist/main/assets/MOONRIVER/${address}.png`
   if (chainId === 56 || chainId === 97) return `https://tokens.bscswap.com/images/${address}.png`
-  if (chainId === 256) return `https://raw.githubusercontent.com/go-protocol/GiveSwap-tokenlist/main/assets/HECOTEST/${address}.png`
-  if (chainId === 128) return `https://raw.githubusercontent.com/go-protocol/GiveSwap-tokenlist/main/assets/HECOMAIN/${address}.png`
+  if (chainId === 256) return `https://raw.githubusercontent.com/go-protocol/GiveSwap-tokenlist/main/assets/AMOY/${address}.png`
+  if (chainId === 128) return `https://raw.githubusercontent.com/go-protocol/GiveSwap-tokenlist/main/assets/POLYGON/${address}.png`
   if (chainId === 588) return `https://raw.githubusercontent.com/BCharity-Net/giveswap-tokenlist/main/assets/METISTEST/${address}.png`
   if (chainId === 1088) return `https://raw.githubusercontent.com/BCharity-Net/giveswap-tokenlist/main/assets/METIS/${address}.png`
   return ''
@@ -64,7 +64,7 @@ export default function CurrencyLogo({
       <StyledEthereumLogo
         src={
           chainId === 56 || chainId === 97 ? BinanceLogo 
-          : chainId === 256 || chainId === 128 ? HecoLogo 
+          : chainId === 137 || chainId === 80002 ? HecoLogo 
           : chainId === 588 || chainId === 1088 ? MetisLogo 
           : EthereumLogo
         }

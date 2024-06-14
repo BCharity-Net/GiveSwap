@@ -1,7 +1,7 @@
-import { TokenAmount, Pair, Currency } from 'giveswap-sdk'
-import { useMemo } from 'react'
-import { abi as IGiveSwapPair } from 'giveswap-core/build/contracts/IGiveSwapPair.json'
 import { Interface } from '@ethersproject/abi'
+import { abi as IGiveSwapPair } from 'giveswap-core/build/contracts/IGiveSwapPair.json'
+import { Currency, Pair, TokenAmount } from 'goodswap-sdk'
+import { useMemo } from 'react'
 import { useActiveWeb3React } from '../hooks'
 
 import { useMultipleContractSingleData } from '../state/multicall/hooks'

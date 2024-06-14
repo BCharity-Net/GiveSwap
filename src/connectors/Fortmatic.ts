@@ -1,5 +1,5 @@
-import { ChainId } from 'giveswap-sdk'
 import { FortmaticConnector as FortmaticConnectorCore } from '@web3-react/fortmatic-connector'
+import { ChainId } from 'goodswap-sdk'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
@@ -11,8 +11,8 @@ type FormaticSupportedChains = Extract<
   | ChainId.KOVAN
   | ChainId.BIANMAIN
   | ChainId.BIANTEST
-  | ChainId.HECOMAIN
-  | ChainId.HECOTEST
+  | ChainId.POLYGON
+  | ChainId.AMOY
   | ChainId.OKTEST
   | ChainId.METISTEST
   | ChainId.METIS
@@ -25,8 +25,8 @@ const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]
   [ChainId.KOVAN]: 'kovan',
   [ChainId.BIANMAIN]: 'bian',
   [ChainId.BIANTEST]: 'bian-test',
-  [ChainId.HECOMAIN]: 'heco',
-  [ChainId.HECOTEST]: 'heco-test',
+  [ChainId.POLYGON]: 'polygon',
+  [ChainId.AMOY]: 'polygon-test',
   [ChainId.OKTEST]: 'ok-test',
   [ChainId.METISTEST]: 'metis-test',
   [ChainId.METIS]: 'metis',

@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from 'giveswap-sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from 'goodswap-sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

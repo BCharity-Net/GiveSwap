@@ -1,5 +1,5 @@
-import { Currency } from 'giveswap-sdk'
-import React, { useCallback, useEffect, useState } from 'react'
+import { Currency } from 'goodswap-sdk'
+import { useCallback, useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import useLast from '../../hooks/useLast'
 import Modal from '../Modal'

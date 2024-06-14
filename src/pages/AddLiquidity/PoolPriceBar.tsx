@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Currency, ETHER, Percent, Price } from 'giveswap-sdk'
-import React, { useContext } from 'react'
+import { Currency, ETHER, Percent, Price } from 'goodswap-sdk'
+import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { AutoColumn } from '../../components/Column'
@@ -9,7 +10,6 @@ import { ONE_BIPS } from '../../constants'
 import { useActiveWeb3React } from '../../hooks'
 import { Field } from '../../state/mint/actions'
 import { TYPE } from '../../theme'
-import { useTranslation } from 'react-i18next'
 
 export function PoolPriceBar({
   currencies,

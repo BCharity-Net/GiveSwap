@@ -1,5 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from 'giveswap-sdk'
-import { BigNumber } from 'ethers'
+import { ChainId, JSBI, Token, TokenAmount } from 'goodswap-sdk'
 import { ZERO_ADDRESS } from '../constants'
 import { computeUniCirculation } from './computeUniCirculation'
 

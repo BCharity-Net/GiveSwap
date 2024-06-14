@@ -1,4 +1,4 @@
-import { Currency, ETHER, ChainId } from 'giveswap-sdk'
+import { ChainId, Currency, ETHER } from 'goodswap-sdk'
 
 export const formatSymbol = (currency?: Currency | null, chainId: ChainId = ChainId.MAINNET) => {
   if (!currency) return ''

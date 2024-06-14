@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { currencyEquals, Trade } from 'giveswap-sdk'
-import React, { useCallback, useMemo } from 'react'
+import { currencyEquals, Trade } from 'goodswap-sdk'
+import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useActiveWeb3React } from '../../hooks'
 import formatSymbol from '../../utils/formatSymbol'
 import TransactionConfirmationModal, {
-  ConfirmationModalContent,
-  TransactionErrorContent
+    ConfirmationModalContent,
+    TransactionErrorContent
 } from '../TransactionConfirmationModal'
 import SwapModalFooter from './SwapModalFooter'
 import SwapModalHeader from './SwapModalHeader'

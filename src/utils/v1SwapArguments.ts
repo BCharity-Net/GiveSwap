@@ -1,13 +1,13 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import {
-  CurrencyAmount,
-  ETHER,
-  SwapParameters,
-  Token,
-  Trade,
-  TradeOptionsDeadline,
-  TradeType
-} from 'giveswap-sdk'
+    CurrencyAmount,
+    ETHER,
+    SwapParameters,
+    Token,
+    Trade,
+    TradeOptionsDeadline,
+    TradeType
+} from 'goodswap-sdk'
 import { getTradeVersion } from '../data/V1'
 import { Version } from '../hooks/useToggledVersion'
 

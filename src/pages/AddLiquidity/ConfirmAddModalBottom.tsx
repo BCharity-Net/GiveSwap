@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Currency, CurrencyAmount, Fraction, Percent } from 'giveswap-sdk'
-import React, { useContext } from 'react'
-import { Text } from 'rebass'
+import { Currency, CurrencyAmount, Fraction, Percent } from 'goodswap-sdk'
+import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Text } from 'rebass'
+import { ThemeContext } from 'styled-components'
 import { ButtonPrimary } from '../../components/Button'
-import { RowBetween, RowFixed } from '../../components/Row'
 import CurrencyLogo from '../../components/CurrencyLogo'
+import { RowBetween, RowFixed } from '../../components/Row'
+import { useActiveWeb3React } from '../../hooks'
 import { Field } from '../../state/mint/actions'
 import { TYPE } from '../../theme'
-import { useActiveWeb3React } from '../../hooks'
 import formatSymbol from '../../utils/formatSymbol'
-import { ThemeContext } from 'styled-components'
 
 export function ConfirmAddModalBottom({
   noLiquidity,

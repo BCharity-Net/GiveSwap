@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'giveswap-sdk'
+import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'goodswap-sdk'
 import { useMemo } from 'react'
 import { BIPS_BASE, INITIAL_ALLOWED_SLIPPAGE } from '../constants'
 // import { getTradeVersion, useV1TradeExchangeAddress } from '../data/V1'
@@ -11,10 +11,10 @@ import isZero from '../utils/isZero'
 // import v1SwapArguments from '../utils/v1SwapArguments'
 import { useActiveWeb3React } from './index'
 // import { useV1ExchangeContract } from './useContract'
-import useTransactionDeadline from './useTransactionDeadline'
+import formatSymbol from '../utils/formatSymbol'
 import useENS from './useENS'
 import { Version } from './useToggledVersion'
-import formatSymbol from '../utils/formatSymbol'
+import useTransactionDeadline from './useTransactionDeadline'
 
 export enum SwapCallbackState {
   INVALID,

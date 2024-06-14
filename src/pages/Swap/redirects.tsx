@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Redirect, RouteComponentProps } from 'react-router-dom'
+import { Navigate, RouteComponentProps } from 'react-router-dom'
 import { AppDispatch } from '../../state'
 import { ApplicationModal, setOpenModal } from '../../state/application/actions'
 
 // Redirects to swap but only replace the pathname
 export function RedirectPathToSwapOnly({ location }: RouteComponentProps) {
-  return <Redirect to={{ ...location, pathname: '/swap' }} />
+  return <Navigate to={{ ...location, pathname: '/swap' }} />
 }
 
 // Redirects from the /swap/:outputCurrency path to the /swap?outputCurrency=:outputCurrency format
@@ -19,7 +19,7 @@ export function RedirectToSwap(props: RouteComponentProps<{ outputCurrency: stri
   } = props
 
   return (
-    <Redirect
+    <Navigate
       to={{
         ...props.location,
         pathname: '/swap',

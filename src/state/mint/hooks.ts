@@ -1,27 +1,27 @@
 import {
-  Currency,
-  CurrencyAmount,
-  ETHER,
-  Fraction,
-  JSBI,
-  Pair,
-  Percent,
-  Price,
-  TokenAmount
-} from 'giveswap-sdk'
+    Currency,
+    CurrencyAmount,
+    ETHER,
+    Fraction,
+    JSBI,
+    Pair,
+    Percent,
+    Price,
+    TokenAmount
+} from 'goodswap-sdk'
 import { useCallback, useMemo } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
 import { PairState, usePair } from '../../data/Reserves'
 import { useTotalSupply } from '../../data/TotalSupply'
 
 import { useActiveWeb3React } from '../../hooks'
+import formatSymbol from '../../utils/formatSymbol'
 import { wrappedCurrency, wrappedCurrencyAmount } from '../../utils/wrappedCurrency'
 import { AppDispatch, AppState } from '../index'
 import { tryParseAmount } from '../swap/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, typeInput } from './actions'
-import formatSymbol from '../../utils/formatSymbol'
 
 const ZERO = JSBI.BigInt(0)
 

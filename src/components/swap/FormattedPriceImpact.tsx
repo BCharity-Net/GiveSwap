@@ -1,5 +1,4 @@
-import { Percent } from 'giveswap-sdk'
-import React from 'react'
+import { Percent } from 'goodswap-sdk'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'
 import { ErrorText } from './styleds'

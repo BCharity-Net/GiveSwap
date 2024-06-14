@@ -1,13 +1,14 @@
-import React from 'react'
-import { Redirect, RouteComponentProps } from 'react-router-dom'
-import AddLiquidity from './index'
+import { Navigate, routeComponentProps } from 'react-router-dom';
+import AddLiquidity from './index';
+
+const params = routeComponentProps();
 
 export function RedirectToAddLiquidity() {
-  return <Redirect to="/add/" />
+  return <Navigate to="/add/" />
 }
 
 const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40})-(0x[a-fA-F0-9]{40})$/
-export function RedirectOldAddLiquidityPathStructure(props: RouteComponentProps<{ currencyIdA: string }>) {
+export function RedirectOldAddLiquidityPathStructure(props: params(<currencyIdA: string>)) {
   const {
     match: {
       params: { currencyIdA }
@@ -15,7 +16,7 @@ export function RedirectOldAddLiquidityPathStructure(props: RouteComponentProps<
   } = props
   const match = currencyIdA.match(OLD_PATH_STRUCTURE)
   if (match?.length) {
-    return <Redirect to={`/add/${match[1]}/${match[2]}`} />
+    return <Navigate to={`/add/${match[1]}/${match[2]}`} />
   }
 
   return <AddLiquidity {...props} />
@@ -28,7 +29,7 @@ export function RedirectDuplicateTokenIds(props: RouteComponentProps<{ currencyI
     }
   } = props
   if (currencyIdA.toLowerCase() === currencyIdB.toLowerCase()) {
-    return <Redirect to={`/add/${currencyIdA}`} />
+    return <Navigate to={`/add/${currencyIdA}`} />
   }
   return <AddLiquidity {...props} />
 }

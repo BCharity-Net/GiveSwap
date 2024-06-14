@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { ChainId, 
-  // TokenAmount, 
-  ETHER } from 'giveswap-sdk'
-import React
-// , { useState } 
-from 'react'
-import { Text } from 'rebass'
+import {
+    ChainId,
+    // TokenAmount, 
+    ETHER
+} from 'goodswap-sdk'
 import { NavLink } from 'react-router-dom'
+import { Text } from 'rebass'
 // import { darken } from 'polished'
 import { useTranslation } from 'react-i18next'
 
@@ -16,18 +15,20 @@ import Logo from '../../assets/images/giveswap_logo.png'
 import LogoDark from '../../assets/images/giveswap_logo_dark.png'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
-import { useETHBalances
-  // , useAggregateUniBalance 
+import {
+    useETHBalances
+    // , useAggregateUniBalance 
 } from '../../state/wallet/hooks'
 // import { CardNoise } from '../earn/styled'
 // import { CountUp } from 'use-count-up'
-import { 
-  // TYPE, 
-  ExternalLink } from '../../theme'
+import {
+    // TYPE, 
+    ExternalLink
+} from '../../theme'
 
 import { YellowCard } from '../Card'
-import Settings from '../Settings'
 import Menu from '../Menu'
+import Settings from '../Settings'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
@@ -40,10 +41,10 @@ import ClaimModal from '../claim/ClaimModal'
 // import UniBalanceContent from './UniBalanceContent'
 // import usePrevious from '../../hooks/usePrevious'
 import { darken } from 'polished'
-import I18nSwitch from '../I18nSwitch'
 import useInfoLink from '../../hooks/useInfoLink'
 import useMiningLink from '../../hooks/useMiningLink'
 import useNetworkType from '../../hooks/useNetworkType'
+import I18nSwitch from '../I18nSwitch'
 
 const HeaderFrame = styled.div`
   display: flex;
@@ -305,8 +306,8 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.KOVAN]: 'Kovan',
   [ChainId.BIANMAIN]: 'BSC Mainnet',
   [ChainId.BIANTEST]: 'BSC Testnet',
-  [ChainId.HECOMAIN]: 'HECO Mainnet',
-  [ChainId.HECOTEST]: 'HECO Testnet',
+  [ChainId.POLYGON]: 'POLYGON Mainnet',
+  [ChainId.AMOY]: 'POLYGON Testnet',
   [ChainId.OKTEST]: 'OKExChain Test',
   [ChainId.MOONRIVER]: 'Moonriver',
   [ChainId.METISTEST]: 'Metis Testnet',

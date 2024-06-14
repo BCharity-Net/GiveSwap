@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react'
-import { Price } from 'giveswap-sdk'
+import { Price } from 'goodswap-sdk'
 import { useContext } from 'react'
 import { Repeat } from 'react-feather'
+import { useTranslation } from 'react-i18next'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
-import { StyledBalanceMaxMini } from './styleds'
-import { useTranslation } from 'react-i18next'
 import { useActiveWeb3React } from '../../hooks'
 import formatSymbol from '../../utils/formatSymbol'
+import { StyledBalanceMaxMini } from './styleds'
 interface TradePriceProps {
   price?: Price
   showInverted: boolean

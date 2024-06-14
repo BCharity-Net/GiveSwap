@@ -1,14 +1,14 @@
-import { UNI } from './../../constants/index'
-import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount } from 'giveswap-sdk'
+import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount } from 'goodswap-sdk'
 import { useMemo } from 'react'
 import ERC20_INTERFACE from '../../constants/abis/erc20'
-import { useAllTokens } from '../../hooks/Tokens'
 import { useActiveWeb3React } from '../../hooks'
+import { useAllTokens } from '../../hooks/Tokens'
 import { useMulticallContract } from '../../hooks/useContract'
 import { isAddress } from '../../utils'
-import { useSingleContractMultipleData, useMultipleContractSingleData } from '../multicall/hooks'
 import { useUserUnclaimedAmount } from '../claim/hooks'
+import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
 import { useTotalUniEarned } from '../stake/hooks'
+import { UNI } from './../../constants/index'
 
 /**
  * Returns a map of the given addresses to their eventually consistent BNB balances.

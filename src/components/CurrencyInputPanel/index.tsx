@@ -1,18 +1,18 @@
-import { Currency, ETHER, Pair } from 'giveswap-sdk'
-import React, { useState, useCallback } from 'react'
-import styled from 'styled-components'
+import { Currency, ETHER, Pair } from 'goodswap-sdk'
 import { darken } from 'polished'
+import { useCallback, useState } from 'react'
+import styled from 'styled-components'
+import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
-import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
+import { TYPE } from '../../theme'
 import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
-import { RowBetween } from '../Row'
-import { TYPE } from '../../theme'
 import { Input as NumericalInput } from '../NumericalInput'
-import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg'
+import { RowBetween } from '../Row'
+import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
 
-import { useActiveWeb3React } from '../../hooks'
 import { useTranslation } from 'react-i18next'
+import { useActiveWeb3React } from '../../hooks'
 
 const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}

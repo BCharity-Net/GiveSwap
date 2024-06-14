@@ -1,5 +1,5 @@
+import { Token } from 'goodswap-sdk'
 import { isAddress } from '../../utils'
-import { Token } from 'giveswap-sdk'
 
 export function filterTokens(tokens: Token[], search: string): Token[] {
   if (search.length === 0) return tokens

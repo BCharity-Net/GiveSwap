@@ -1,7 +1,6 @@
-import { Currency } from 'giveswap-sdk'
-import React from 'react'
-import styled from 'styled-components'
-import CurrencyLogo from '../CurrencyLogo'
+import { Currency } from 'goodswap-sdk';
+import styled from 'styled-components';
+import CurrencyLogo from '../CurrencyLogo';
 
 const Wrapper = styled.div<{ margin: boolean; sizeraw: number }>`
   position: relative;

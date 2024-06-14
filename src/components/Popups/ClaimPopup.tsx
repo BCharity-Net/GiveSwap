@@ -1,17 +1,17 @@
-import { TokenAmount } from 'giveswap-sdk'
-import React, { useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { TokenAmount } from 'goodswap-sdk'
+import { useEffect } from 'react'
 import { X } from 'react-feather'
+import { useTranslation } from 'react-i18next'
 import styled, { keyframes } from 'styled-components'
 import tokenLogo from '../../assets/images/token-logo.png'
 import { ButtonPrimary } from '../../components/Button'
 import { useActiveWeb3React } from '../../hooks'
 import { ApplicationModal } from '../../state/application/actions'
 import {
-  useModalOpen,
-  useShowClaimPopup,
-  useToggleSelfClaimModal,
-  useToggleShowClaimPopup
+    useModalOpen,
+    useShowClaimPopup,
+    useToggleSelfClaimModal,
+    useToggleShowClaimPopup
 } from '../../state/application/hooks'
 
 import { useUserHasAvailableClaim, useUserUnclaimedAmount } from '../../state/claim/hooks'

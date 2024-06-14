@@ -1,9 +1,9 @@
 import { TransactionResponse } from '@ethersproject/abstract-provider'
 import { AddressZero } from '@ethersproject/constants'
-import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, TokenAmount, WETH } from 'giveswap-sdk'
-import React, { useCallback, useMemo, useState } from 'react'
+import { Currency, CurrencyAmount, Fraction, JSBI, Percent, Token, TokenAmount, WETH } from 'goodswap-sdk'
+import { useCallback, useMemo, useState } from 'react'
 import ReactGA from 'react-ga'
-import { Redirect, RouteComponentProps } from 'react-router'
+import { Navigate, RouteComponentProps } from 'react-router'
 import { Text } from 'rebass'
 import { ButtonConfirmed } from '../../components/Button'
 import { LightCard, PinkCard, YellowCard } from '../../components/Card'
@@ -311,7 +311,7 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
 }
 
 export default function MigrateV1Exchange({
-  history,
+  navigate,
   match: {
     params: { address }
   }
@@ -336,7 +336,7 @@ export default function MigrateV1Exchange({
   // redirect for invalid url params
   if (!validatedAddress || tokenAddress === AddressZero) {
     console.error('Invalid address in path', address)
-    return <Redirect to="/migrate/v1" />
+    return <Navigate to="/migrate/v1" />
   }
 
   return (
@@ -361,7 +361,7 @@ export default function MigrateV1Exchange({
 
             <ButtonConfirmed
               onClick={() => {
-                history.push(`/remove/v1/${validatedAddress}`)
+                navigate.push(`/remove/v1/${validatedAddress}`)
               }}
             >
               Remove

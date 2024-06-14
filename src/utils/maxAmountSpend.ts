@@ -1,4 +1,4 @@
-import { CurrencyAmount, ETHER, JSBI } from 'giveswap-sdk'
+import { CurrencyAmount, ETHER, JSBI } from 'goodswap-sdk'
 import { MIN_ETH } from '../constants'
 
 /**

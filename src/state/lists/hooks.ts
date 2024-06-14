@@ -1,5 +1,5 @@
-import { ChainId, Token } from 'giveswap-sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
+import { ChainId, Token } from 'goodswap-sdk'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { DEFAULT_TOKEN_LIST_URL } from '../../constants/lists'
@@ -39,8 +39,8 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.MAINNET]: {},
   [ChainId.BIANMAIN]: {},
   [ChainId.BIANTEST]: {},
-  [ChainId.HECOMAIN]: {},
-  [ChainId.HECOTEST]: {},
+  [ChainId.POLYGON]: {},
+  [ChainId.AMOY]: {},
   [ChainId.OKTEST]: {},
   [ChainId.MOONRIVER]: {},
   [ChainId.METISTEST]: {},

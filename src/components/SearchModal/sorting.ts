@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from 'giveswap-sdk'
+import { Token, TokenAmount } from 'goodswap-sdk'
 import { useMemo } from 'react'
 import { useAllTokenBalances } from '../../state/wallet/hooks'
 

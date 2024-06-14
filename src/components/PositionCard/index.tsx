@@ -1,11 +1,11 @@
-import { JSBI, Pair, Percent } from 'giveswap-sdk'
+import { JSBI, Pair, Percent } from 'goodswap-sdk'
 import { darken } from 'polished'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
-import { useTranslation } from 'react-i18next'
 import { useTotalSupply } from '../../data/TotalSupply'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -13,18 +13,18 @@ import { useTokenBalance } from '../../state/wallet/hooks'
 import { ExternalLink, TYPE } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/wrappedCurrency'
-import { ButtonPrimary, ButtonSecondary, ButtonEmpty } from '../Button'
+import { ButtonEmpty, ButtonPrimary, ButtonSecondary } from '../Button'
 import { CardNoise } from '../earn/styled'
 
 import { useColor } from '../../hooks/useColor'
 
+import formatSymbol from '../../utils/formatSymbol'
 import Card, { GreyCard, LightCard } from '../Card'
 import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import DoubleCurrencyLogo from '../DoubleLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { Dots } from '../swap/styleds'
-import formatSymbol from '../../utils/formatSymbol'
 
 export const FixedHeightRow = styled(RowBetween)`
   height: 24px;

@@ -1,5 +1,5 @@
-import { ChainId, JSBI, Percent, Token, WETH } from 'giveswap-sdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
+import { ChainId, JSBI, Percent, Token, WETH } from 'goodswap-sdk'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
@@ -9,8 +9,8 @@ export const ROUTER_ADDRESS: { [chainId in ChainId]?: string } =  {
   [ChainId.RINKEBY]: '',
   [ChainId.GÖRLI]: '',
   [ChainId.KOVAN]: '0xd184b42c7f8d805DccB23BD986a4A53aB72D43b2',
-  [ChainId.HECOMAIN]: '0xB88040A237F8556Cf63E305a06238409B3CAE7dC',
-  [ChainId.HECOTEST]: '0xca8e585a44375fab1bf6ad50887a770d06f0e32e',
+  [ChainId.POLYGON]: '0xB88040A237F8556Cf63E305a06238409B3CAE7dC',
+  [ChainId.AMOY]: '0xca8e585a44375fab1bf6ad50887a770d06f0e32e',
   [ChainId.BIANMAIN]: '0xB88040A237F8556Cf63E305a06238409B3CAE7dC',
   [ChainId.BIANTEST]: '0xB88040A237F8556Cf63E305a06238409B3CAE7dC',
   [ChainId.OKTEST]: '0x7f6c436f47049f2dbd34fd208b14492259a1d8af',
@@ -60,25 +60,25 @@ export const UNI: { [chainId in ChainId]: Token } = {
     'BEST',
     'Unisave'
   ),
-  [ChainId.HECOMAIN]: new Token(
-    ChainId.HECOMAIN,
+  [ChainId.POLYGON]: new Token(
+    ChainId.POLYGON,
     '0xbbEeF58A63aeb9D5BC5e5792A20B81e0DE83fD14',
     10,
-    'HT',
+    'MATIC',
     'Unisave'
   ),
-  [ChainId.HECOTEST]: new Token(
-    ChainId.HECOTEST,
+  [ChainId.AMOY]: new Token(
+    ChainId.AMOY,
     '0x50b29a42c9e4d0f940292c386207f492458ee358',
     10,
-    'HT',
+    'MATIC',
     'Unisave'
   ),
   [ChainId.OKTEST]: new Token(
     ChainId.OKTEST,
     '0x50b29a42c9e4d0f940292c386207f492458ee358',
     10,
-    'HT',
+    'MATIC',
     'Unisave'
   ),
   [ChainId.MOONRIVER]: new Token(
@@ -153,21 +153,21 @@ export const T_USDT = new Token(
   'Tether USD'
 )
 export const TESTGOT = new Token(
-  ChainId.HECOTEST,
+  ChainId.AMOY,
   '0xA7d5b5Dbc29ddef9871333AD2295B2E7D6F12391',
   18,
   'GOT',
   'GiveSwap Token'
 )
 export const TESTGOC = new Token(
-  ChainId.HECOTEST,
+  ChainId.AMOY,
   '0x271B54EBe36005A7296894F819D626161C44825C',
   18,
   'GOC',
   'GoCash'
 )
 export const TESTGOS = new Token(
-  ChainId.HECOTEST,
+  ChainId.AMOY,
   '0x36b29B53c483bd00978D40126E614bb7e45d8354',
   18,
   'GOS',
@@ -182,8 +182,8 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
   [ChainId.BIANMAIN]: [WETH[ChainId.BIANMAIN]],
   [ChainId.BIANTEST]: [WETH[ChainId.BIANTEST]],
-  [ChainId.HECOMAIN]: [WETH[ChainId.HECOMAIN]],
-  [ChainId.HECOTEST]: [WETH[ChainId.HECOTEST]],
+  [ChainId.POLYGON]: [WETH[ChainId.POLYGON]],
+  [ChainId.AMOY]: [WETH[ChainId.AMOY]],
   [ChainId.OKTEST]: [WETH[ChainId.OKTEST]],
   [ChainId.MOONRIVER]: [WETH[ChainId.MOONRIVER]],
   [ChainId.METISTEST]: [WETH[ChainId.METISTEST]],
@@ -213,7 +213,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT],
   [ChainId.BIANMAIN]: [...WETH_ONLY[ChainId.BIANMAIN], B_USDT, BUSD, B_DAI],
   [ChainId.BIANTEST]: [...WETH_ONLY[ChainId.BIANTEST], T_USDT, T_BUSD, T_DAI],
-  [ChainId.HECOTEST]: [TESTGOT ,TESTGOC,TESTGOS]
+  [ChainId.AMOY]: [TESTGOT ,TESTGOC,TESTGOS]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -222,8 +222,8 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT],
   [ChainId.BIANMAIN]: [...WETH_ONLY[ChainId.BIANMAIN], B_USDT, BUSD, B_DAI],
   [ChainId.BIANTEST]: [...WETH_ONLY[ChainId.BIANTEST], T_USDT, T_BUSD, T_DAI],
-  [ChainId.HECOTEST]: [...WETH_ONLY[ChainId.HECOTEST]],
-  [ChainId.HECOMAIN]: [...WETH_ONLY[ChainId.HECOMAIN]],
+  [ChainId.AMOY]: [...WETH_ONLY[ChainId.AMOY]],
+  [ChainId.POLYGON]: [...WETH_ONLY[ChainId.POLYGON]],
   [ChainId.OKTEST]: [...WETH_ONLY[ChainId.OKTEST]],
   [ChainId.MOONRIVER]: [...WETH_ONLY[ChainId.MOONRIVER]],
   [ChainId.METISTEST]: [...WETH_ONLY[ChainId.METISTEST]],
@@ -235,28 +235,28 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [
       new Token(ChainId.METISTEST, '0x5C6a0B211a3dd809050A26F224F0e2AAba3d22f5', 18, 'GIVE', 'GiveSwap Token'),
       new Token(ChainId.METISTEST, '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000', 18, 'METIS', 'METIS')
-      // new Token(ChainId.HECOTEST, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
+      // new Token(ChainId.AMOY, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
     ]
   ],
   [ChainId.METIS]: [
     [
       new Token(ChainId.METIS, '0xFe3F3A1f5B91eeb9c85255A71F3D1A99F01eC3eC', 18, 'GIVE', 'GiveSwap Token'),
       new Token(ChainId.METIS, '0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000', 18, 'METIS', 'METIS')
-      // new Token(ChainId.HECOTEST, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
+      // new Token(ChainId.AMOY, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
     ]
   ],   
   [ChainId.MOONRIVER]: [
     [
       new Token(ChainId.MOONRIVER, '0x1078a9280BDcF616D9eFb687D5A44Af4264fb923', 18, 'GIVE', 'GiveSwap Token'),
       new Token(ChainId.MOONRIVER, '0x98878b06940ae243284ca214f92bb71a2b032b8a', 18, 'WMOVR', 'Wrappered MOVR')
-      // new Token(ChainId.HECOTEST, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
+      // new Token(ChainId.AMOY, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
     ]
   ],
-  [ChainId.HECOMAIN]: [
+  [ChainId.POLYGON]: [
     [
-      new Token(ChainId.HECOMAIN, '0xA7d5b5Dbc29ddef9871333AD2295B2E7D6F12391', 18, 'GOT', 'GiveSwap Token'),
-      new Token(ChainId.HECOMAIN, '0x271B54EBe36005A7296894F819D626161C44825C', 18, 'GOC', 'GoCash Cash')
-      // new Token(ChainId.HECOTEST, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
+      new Token(ChainId.POLYGON, '0xA7d5b5Dbc29ddef9871333AD2295B2E7D6F12391', 18, 'GOT', 'GiveSwap Token'),
+      new Token(ChainId.POLYGON, '0x271B54EBe36005A7296894F819D626161C44825C', 18, 'GOC', 'GoCash Cash')
+      // new Token(ChainId.AMOY, '0x0f548051B135fa8f7F6190cb78Fd13eCB544fEE6', 8, 'HUSD', 'Heco USD')
     ]
   ],
   [ChainId.OKTEST]: [

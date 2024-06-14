@@ -1,8 +1,8 @@
-import { useState, useLayoutEffect } from 'react'
-import { shade } from 'polished'
+import { ChainId, Token } from 'goodswap-sdk'
 import Vibrant from 'node-vibrant'
+import { shade } from 'polished'
+import { useLayoutEffect, useState } from 'react'
 import { hex } from 'wcag-contrast'
-import { Token, ChainId } from 'giveswap-sdk'
 
 async function getColorFromToken(token: Token): Promise<string | null> {
   if (token.chainId === ChainId.RINKEBY && token.address === '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735') {

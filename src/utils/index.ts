@@ -1,11 +1,11 @@
-import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
-import { AddressZero } from '@ethersproject/constants'
-import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { BigNumber } from '@ethersproject/bignumber'
+import { AddressZero } from '@ethersproject/constants'
+import { Contract } from '@ethersproject/contracts'
+import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { abi as IGiveSwapRouter } from 'giveswap-core/build/contracts/IGiveSwapRouter.json'
+import { ChainId, Currency, CurrencyAmount, ETHER, JSBI, Percent, Token } from 'goodswap-sdk'
 import { ROUTER_ADDRESS } from '../constants'
-import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from 'giveswap-sdk'
 import { TokenAddressMap } from '../state/lists/hooks'
 
 // returns the checksummed address if the address is valid, otherwise returns false
@@ -26,11 +26,13 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   56: 'bscscan.com',
   97: 'testnet.bscscan.com',
   128: 'hecoinfo.com',
+  137: 'polygonscan.com/',
   256: 'testnet.hecoinfo.com',
   65: 'www.oklink.com/okexchain-test',
   588: 'stardust-explorer.metis.io/',
   1088: 'andromeda-explorer.metis.io/',
-  1285: 'blockscout.moonriver.moonbeam.network'
+  1285: 'blockscout.moonriver.moonbeam.network',
+  80002: 'amoy.polygonscan.com/'
 }
 
 export function getBscScanLink(
