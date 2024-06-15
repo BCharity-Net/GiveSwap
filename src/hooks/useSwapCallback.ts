@@ -1,4 +1,4 @@
-import { BigNumber } from '@ethersproject/bignumber'
+import { BigInt } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from 'goodswap-sdk'
 import { useMemo } from 'react'
@@ -29,7 +29,7 @@ interface SwapCall {
 
 interface SuccessfulCall {
   call: SwapCall
-  gasEstimate: BigNumber
+  gasEstimate: BigInt
 }
 
 interface FailedCall {

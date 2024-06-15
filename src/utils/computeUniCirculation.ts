@@ -1,4 +1,3 @@
-import { BigNumber } from 'ethers'
 import { JSBI, Token, TokenAmount } from 'goodswap-sdk'
 import { STAKING_GENESIS } from '../state/stake/hooks'
 
@@ -34,7 +33,7 @@ const TEAM_YEAR_2_AMOUNT = 120_000_00
 const TEAM_YEAR_3_AMOUNT = 80_000_00
 const TEAM_YEAR_4_AMOUNT = 40_000_00
 
-function withVesting(before: JSBI, time: BigNumber, amount: number, start: number, end: number, cliff?: number) {
+function withVesting(before: JSBI, time: BigInt, amount: number, start: number, end: number, cliff?: number) {
   if (time.gt(start)) {
     if (time.gte(end)) {
       return JSBI.add(before, JSBI.BigInt(amount))
@@ -55,7 +54,7 @@ function withVesting(before: JSBI, time: BigNumber, amount: number, start: numbe
 
 export function computeUniCirculation(
   uni: Token,
-  blockTimestamp: BigNumber,
+  blockTimestamp: BigInt,
   unclaimedUni: TokenAmount | undefined
 ): TokenAmount {
   let wholeAmount = JSBI.BigInt(USERS_AMOUNT)

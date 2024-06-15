@@ -1,5 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers'
-import { splitSignature } from 'ethers/lib/utils'
+import { splitSignature } from 'ethers'
 import { Pair, TokenAmount } from 'goodswap-sdk'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'

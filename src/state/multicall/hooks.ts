@@ -1,5 +1,4 @@
 import { FunctionFragment, Interface } from '@ethersproject/abi'
-import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,19 +6,19 @@ import { useActiveWeb3React } from '../../hooks'
 import { useBlockNumber } from '../application/hooks'
 import { AppDispatch, AppState } from '../index'
 import {
-    Call,
-    ListenerOptions,
-    addMulticallListeners,
-    parseCallKey,
-    removeMulticallListeners,
-    toCallKey
+  Call,
+  ListenerOptions,
+  addMulticallListeners,
+  parseCallKey,
+  removeMulticallListeners,
+  toCallKey
 } from './actions'
 
 export interface Result extends ReadonlyArray<any> {
   readonly [key: string]: any
 }
 
-type MethodArg = string | number | BigNumber
+type MethodArg = string | number | BigInt
 type MethodArgs = Array<MethodArg | MethodArg[]>
 
 type OptionalMethodInputs = Array<MethodArg | MethodArg[] | undefined> | undefined

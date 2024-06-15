@@ -167,13 +167,13 @@ export default function Pool() {
 
             {!account ? (
               <Card padding="40px">
-                <TYPE.body color={theme.text3} textAlign="center">
+                <TYPE.body color={theme?.text3} textAlign="center">
                   {t('connectToAWalletToViewYourLiquidity')}
                 </TYPE.body>
               </Card>
             ) : v2IsLoading ? (
               <EmptyProposals>
-                <TYPE.body color={theme.text3} textAlign="center">
+                <TYPE.body color={theme?.text3} textAlign="center">
                   <Dots>{t('loading')}</Dots>
                 </TYPE.body>
               </EmptyProposals>
@@ -194,7 +194,7 @@ export default function Pool() {
               </>
             ) : (
               <EmptyProposals>
-                <TYPE.body color={theme.text3} textAlign="center">
+                <TYPE.body color={theme?.text3} textAlign="center">
                   {t('noLiquidityFound')}
                 </TYPE.body>
               </EmptyProposals>

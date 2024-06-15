@@ -1,14 +1,12 @@
-import { Navigate, routeComponentProps } from 'react-router-dom';
+import { Navigate, RouteComponentProps } from 'react-router-dom';
 import AddLiquidity from './index';
-
-const params = routeComponentProps();
 
 export function RedirectToAddLiquidity() {
   return <Navigate to="/add/" />
 }
 
 const OLD_PATH_STRUCTURE = /^(0x[a-fA-F0-9]{40})-(0x[a-fA-F0-9]{40})$/
-export function RedirectOldAddLiquidityPathStructure(props: params(<currencyIdA: string>)) {
+export function RedirectOldAddLiquidityPathStructure(props: RouteComponentProps<{ currencyIdA: string }>) {
   const {
     match: {
       params: { currencyIdA }

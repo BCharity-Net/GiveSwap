@@ -1,5 +1,4 @@
 import { getAddress } from '@ethersproject/address'
-import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
@@ -25,9 +24,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   42: 'kovan.etherscan.io',
   56: 'bscscan.com',
   97: 'testnet.bscscan.com',
-  128: 'hecoinfo.com',
   137: 'polygonscan.com/',
-  256: 'testnet.hecoinfo.com',
   65: 'www.oklink.com/okexchain-test',
   588: 'stardust-explorer.metis.io/',
   1088: 'andromeda-explorer.metis.io/',
@@ -69,8 +66,8 @@ export function shortenAddress(address: string, chars = 4): string {
 }
 
 // add 10%
-export function calculateGasMargin(value: BigNumber): BigNumber {
-  return value.mul(BigNumber.from(10000).add(BigNumber.from(1000))).div(BigNumber.from(10000))
+export function calculateGasMargin(value: BigInt): BigInt {
+  return value * (BigInt(10000) + (BigInt(1000))) / (BigInt(10000))
 }
 
 // converts a basis points value to a sdk percent

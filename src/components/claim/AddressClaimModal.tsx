@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { AutoColumn, ColumnCenter } from '../Column'
 import Modal from '../Modal'
 
-import { isAddress } from 'ethers/lib/utils'
+import { isAddress } from 'ethers'
 import { TokenAmount } from 'goodswap-sdk'
 import { Text } from 'rebass'
 import Circle from '../../assets/images/blue-loader.svg'

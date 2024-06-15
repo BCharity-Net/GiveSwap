@@ -1,4 +1,4 @@
-import { isAddress } from 'ethers/lib/utils'
+import { isAddress } from 'ethers'
 import { JSBI, TokenAmount } from 'goodswap-sdk'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'

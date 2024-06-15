@@ -36,31 +36,31 @@ export function ConfirmAddModalBottom({
   return (
     <>
       <RowBetween>
-        <TYPE.body style={{ color: theme.text1 }}>
+        <TYPE.body style={{ color: theme?.text1 }}>
           {formatSymbol(currencyA!, chainId)} {t('deposited')}
         </TYPE.body>
         <RowFixed>
           <CurrencyLogo currency={currencyA} style={{ marginRight: '8px' }} />
-          <TYPE.body style={{ color: theme.text1 }}>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</TYPE.body>
+          <TYPE.body style={{ color: theme?.text1 }}>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</TYPE.body>
         </RowFixed>
       </RowBetween>
       <RowBetween>
-        <TYPE.body style={{ color: theme.text1 }}>
+        <TYPE.body style={{ color: theme?.text1 }}>
           {formatSymbol(currencyB!, chainId)} {t('deposited')}
         </TYPE.body>
         <RowFixed>
           <CurrencyLogo currency={currencyB} style={{ marginRight: '8px' }} />
-          <TYPE.body style={{ color: theme.text1 }}>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</TYPE.body>
+          <TYPE.body style={{ color: theme?.text1 }}>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</TYPE.body>
         </RowFixed>
       </RowBetween>
       <RowBetween>
-        <TYPE.body style={{ color: theme.text1 }}>{t('rates')}</TYPE.body>
-        <TYPE.body style={{ color: theme.text1 }}>
+        <TYPE.body style={{ color: theme?.text1 }}>{t('rates')}</TYPE.body>
+        <TYPE.body style={{ color: theme?.text1 }}>
           {`1 ${formatSymbol(currencyA!, chainId)} = ${price?.toSignificant(4)} ${formatSymbol(currencyB!, chainId)}`}
         </TYPE.body>
       </RowBetween>
       <RowBetween style={{ justifyContent: 'flex-end' }}>
-        <TYPE.body style={{ color: theme.text1 }}>
+        <TYPE.body style={{ color: theme?.text1 }}>
           {`1 ${formatSymbol(currencyB!, chainId)} = ${price?.invert().toSignificant(4)} ${formatSymbol(
             currencyA!,
             chainId
@@ -68,8 +68,8 @@ export function ConfirmAddModalBottom({
         </TYPE.body>
       </RowBetween>
       <RowBetween>
-        <TYPE.body style={{ color: theme.text1 }}>{t('shareOfPool')}:</TYPE.body>
-        <TYPE.body style={{ color: theme.text1 }}>
+        <TYPE.body style={{ color: theme?.text1 }}>{t('shareOfPool')}:</TYPE.body>
+        <TYPE.body style={{ color: theme?.text1 }}>
           {noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%
         </TYPE.body>
       </RowBetween>

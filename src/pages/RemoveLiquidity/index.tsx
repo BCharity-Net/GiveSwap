@@ -29,7 +29,6 @@ import { usePairContract } from '../../hooks/useContract'
 import useIsArgentWallet from '../../hooks/useIsArgentWallet'
 import useTransactionDeadline from '../../hooks/useTransactionDeadline'
 
-import { BigNumber } from '@ethersproject/bignumber'
 import { Dots } from '../../components/swap/styleds'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { useWalletModalToggle } from '../../state/application/hooks'
@@ -292,7 +291,7 @@ export default function RemoveLiquidity({
     }
     console.log('methodNames',methodNames)
 
-    const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
+    const safeGasEstimates: (BigInt | undefined)[] = await Promise.all(
       methodNames.map(methodName =>
         router.estimateGas[methodName](...args)
           .then(calculateGasMargin)
@@ -304,7 +303,7 @@ export default function RemoveLiquidity({
     )
 
     const indexOfSuccessfulEstimation = safeGasEstimates.findIndex(safeGasEstimate =>
-      BigNumber.isBigNumber(safeGasEstimate)
+      BigInt.isBigNumber(safeGasEstimate)
     )
 
     // all estimations failed...
@@ -364,7 +363,7 @@ export default function RemoveLiquidity({
           </RowFixed>
         </RowBetween>
         <RowFixed>
-          <Plus size="16" color={theme.text2} />
+          <Plus size="16" color={theme?.text2} />
         </RowFixed>
         <RowBetween align="flex-end">
           <Text fontSize={24} fontWeight={500}>
@@ -378,7 +377,7 @@ export default function RemoveLiquidity({
           </RowFixed>
         </RowBetween>
 
-        <TYPE.italic fontSize={12} color={theme.text2} textAlign="left" padding={'12px 0 0 0'}>
+        <TYPE.italic fontSize={12} color={theme?.text2} textAlign="left" padding={'12px 0 0 0'}>
           {`${t('output-is-estimated-if-the-price-changes-by-more-than')} ${allowedSlippage / 100}% ${t(
             'your-transaction-will-revert'
           )}`}
@@ -391,7 +390,7 @@ export default function RemoveLiquidity({
     return (
       <>
         <RowBetween>
-          <Text color={theme.text2} fontWeight={500} fontSize={16}>
+          <Text color={theme?.text2} fontWeight={500} fontSize={16}>
             {format(currencyA) + '/' + format(currencyB)} {t('burned')}
           </Text>
           <RowFixed>
@@ -404,16 +403,16 @@ export default function RemoveLiquidity({
         {pair && (
           <>
             <RowBetween>
-              <Text color={theme.text2} fontWeight={500} fontSize={16}>
+              <Text color={theme?.text2} fontWeight={500} fontSize={16}>
                 {t('price')}
               </Text>
-              <Text fontWeight={500} fontSize={16} color={theme.text1}>
+              <Text fontWeight={500} fontSize={16} color={theme?.text1}>
                 1 {format(currencyA)} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {format(currencyB)}
               </Text>
             </RowBetween>
             <RowBetween>
               <div />
-              <Text fontWeight={500} fontSize={16} color={theme.text1}>
+              <Text fontWeight={500} fontSize={16} color={theme?.text1}>
                 1 {format(currencyB)} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {format(currencyA)}
               </Text>
             </RowBetween>
@@ -449,9 +448,9 @@ export default function RemoveLiquidity({
   const handleSelectCurrencyA = useCallback(
     (currency: Currency) => {
       if (currencyIdB && currencyId(currency) === currencyIdB) {
-        navigate.push(`/remove/${currencyId(currency)}/${currencyIdA}`)
+        navigate(`/remove/${currencyId(currency)}/${currencyIdA}`)
       } else {
-        navigate.push(`/remove/${currencyId(currency)}/${currencyIdB}`)
+        navigate(`/remove/${currencyId(currency)}/${currencyIdB}`)
       }
     },
     [currencyIdA, currencyIdB, navigate]
@@ -459,9 +458,9 @@ export default function RemoveLiquidity({
   const handleSelectCurrencyB = useCallback(
     (currency: Currency) => {
       if (currencyIdA && currencyId(currency) === currencyIdA) {
-        navigate.push(`/remove/${currencyIdB}/${currencyId(currency)}`)
+        navigate(`/remove/${currencyIdB}/${currencyId(currency)}`)
       } else {
-        navigate.push(`/remove/${currencyIdA}/${currencyId(currency)}`)
+        navigate(`/remove/${currencyIdA}/${currencyId(currency)}`)
       }
     },
     [currencyIdA, currencyIdB, navigate]
@@ -545,7 +544,7 @@ export default function RemoveLiquidity({
             {!showDetailed && (
               <>
                 <ColumnCenter>
-                  <ArrowDown size="16" color={theme.text2} />
+                  <ArrowDown size="16" color={theme?.text2} />
                 </ColumnCenter>
                 <LightCard>
                   <AutoColumn gap="10px">
@@ -619,7 +618,7 @@ export default function RemoveLiquidity({
                   id="liquidity-amount"
                 />
                 <ColumnCenter>
-                  <ArrowDown size="16" color={theme.text2} />
+                  <ArrowDown size="16" color={theme?.text2} />
                 </ColumnCenter>
                 <CurrencyInputPanel
                   hideBalance={true}
@@ -633,7 +632,7 @@ export default function RemoveLiquidity({
                   id="remove-liquidity-tokena"
                 />
                 <ColumnCenter>
-                  <Plus size="16" color={theme.text2} />
+                  <Plus size="16" color={theme?.text2} />
                 </ColumnCenter>
                 <CurrencyInputPanel
                   hideBalance={true}

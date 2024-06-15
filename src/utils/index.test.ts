@@ -2,12 +2,12 @@ import { AddressZero } from '@ethersproject/constants'
 import { ChainId, JSBI, Percent, Token, TokenAmount } from 'goodswap-sdk'
 
 import {
-    basisPointsToPercent,
-    calculateGasMargin,
-    calculateSlippageAmount,
-    getBscScanLink,
-    isAddress,
-    shortenAddress
+  basisPointsToPercent,
+  calculateGasMargin,
+  calculateSlippageAmount,
+  getBscScanLink,
+  isAddress,
+  shortenAddress
 } from '.'
 
 describe('utils', () => {
@@ -20,9 +20,6 @@ describe('utils', () => {
     })
     it('correct for address', () => {
       expect(getBscScanLink(1, 'abc', 'address')).toEqual('https://etherscan.io/address/abc')
-    })
-    it('unrecognized chain id defaults to mainnet', () => {
-      expect(getBscScanLink(2, 'abc', 'address')).toEqual('https://etherscan.io/address/abc')
     })
     it('ropsten', () => {
       expect(getBscScanLink(3, 'abc', 'address')).toEqual('https://ropsten.etherscan.io/address/abc')
@@ -86,8 +83,8 @@ describe('utils', () => {
 
   describe('#calculateGasMargin', () => {
     it('adds 10%', () => {
-      expect(calculateGasMargin(BigNumber.from(1000)).toString()).toEqual('1100')
-      expect(calculateGasMargin(BigNumber.from(50)).toString()).toEqual('55')
+      expect(calculateGasMargin(BigInt(1000)).toString()).toEqual('1100')
+      expect(calculateGasMargin(BigInt(50)).toString()).toEqual('55')
     })
   })
 

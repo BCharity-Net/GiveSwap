@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from 'goodswap-sdk'
 import { useCallback, useContext, useState } from 'react'
@@ -150,7 +149,7 @@ export default function AddLiquidity({
     let estimate,
       method: (...args: any) => Promise<TransactionResponse>,
       args: Array<string | string[] | number>,
-      value: BigNumber | null
+      value: BigInt | null
     if (currencyA === ETHER || currencyB === ETHER) {
       const tokenBIsETH = currencyB === ETHER
       estimate = router.estimateGas.addLiquidityHT
@@ -163,7 +162,7 @@ export default function AddLiquidity({
         account,
         deadline.toHexString()
       ]
-      value = BigNumber.from((tokenBIsETH ? parsedAmountB : parsedAmountA).raw.toString())
+      value = BigInt((tokenBIsETH ? parsedAmountB : parsedAmountA).raw.toString())
     } else {
       estimate = router.estimateGas.addLiquidity
       method = router.addLiquidity
@@ -280,9 +279,9 @@ export default function AddLiquidity({
     (currencyA: Currency) => {
       const newCurrencyIdA = currencyId(currencyA)
       if (newCurrencyIdA === currencyIdB) {
-        navigate.push(`/add/${currencyIdB}/${currencyIdA}`)
+        navigate(`/add/${currencyIdB}/${currencyIdA}`)
       } else {
-        navigate.push(`/add/${newCurrencyIdA}/${currencyIdB}`)
+        navigate(`/add/${newCurrencyIdA}/${currencyIdB}`)
       }
     },
     [currencyIdB, navigate, currencyIdA]
@@ -292,12 +291,12 @@ export default function AddLiquidity({
       const newCurrencyIdB = currencyId(currencyB)
       if (currencyIdA === newCurrencyIdB) {
         if (currencyIdB) {
-          navigate.push(`/add/${currencyIdB}/${newCurrencyIdB}`)
+          navigate(`/add/${currencyIdB}/${newCurrencyIdB}`)
         } else {
-          navigate.push(`/add/${newCurrencyIdB}`)
+          navigate(`/add/${newCurrencyIdB}`)
         }
       } else {
-        navigate.push(`/add/${currencyIdA ? currencyIdA : 'CURRENCY'}/${newCurrencyIdB}`)
+        navigate(`/add/${currencyIdA ? currencyIdA : 'CURRENCY'}/${newCurrencyIdB}`)
       }
     },
     [currencyIdA, navigate, currencyIdB]
@@ -366,7 +365,7 @@ export default function AddLiquidity({
               showCommonBases
             />
             <ColumnCenter>
-              <Plus size="16" color={theme.white} />
+              <Plus size="16" color={theme?.white} />
             </ColumnCenter>
             <CurrencyInputPanel
               value={formattedAmounts[Field.CURRENCY_B]}
